@@ -1,5 +1,5 @@
 # babel generates into this folder
-output
+dist
 
 # Created by https://www.gitignore.io/api/node,jetbrains,reactnative,visualstudiocode
 

@@ -12,6 +12,7 @@
     "@types/express-graphql": "0.6.1",
     "@types/graphql": "0.13.0",
     "@types/node": "9.6.6",
+    "concurrently": "^3.5.1",
     "nodemon": "1.17.3",
     "prettier": "1.12.1",
     "ts-node": "6.0.0",
@@ -23,6 +24,8 @@
   "scripts": {
     "build": "node_modules/.bin/tsc",
     "start": "node_modules/.bin/tsc && node dist/server.js",
-    "debug": "node_modules/.bin/nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/server.ts"
+    "watch-ts": "node_modules/.bin/tsc -w",
+    "compiled-debug": "node_modules/.bin/nodemon --inspect dist/server.js",
+    "debug": "node_modules/.bin/concurrently -k \"yarn watch-ts\" \"yarn compiled-debug\""
   }
 }

@@ -15,7 +15,6 @@
     "concurrently": "^3.5.1",
     "nodemon": "1.17.3",
     "prettier": "1.12.1",
-    "ts-node": "6.0.0",
     "tslint": "5.9.1",
     "tslint-config-airbnb": "5.8.0",
     "tslint-config-prettier": "1.12.0",

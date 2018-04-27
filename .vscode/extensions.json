@@ -2,7 +2,8 @@
 	// See http://go.microsoft.com/fwlink/?LinkId=827846
 	// for the documentation about the extensions.json format
 	"recommendations": [
-        "esbenp.prettier-vscode",
-        "eg2.tslint"
+		// Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
+		"esbenp.prettier-vscode",
+		"eg2.tslint"
 	]
 }

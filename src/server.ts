@@ -3,7 +3,6 @@ import expressGraphql from "express-graphql";
 import { buildSchema } from "graphql";
 
 const PORT = process.env.PORT || 5000;
-const wes = "hi";
 
 // Construct a schema, using GraphQL schema language
 const schema = buildSchema(`

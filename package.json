@@ -25,6 +25,8 @@
     "start": "node_modules/.bin/tsc && node dist/server.js",
     "watch-ts": "node_modules/.bin/tsc -w",
     "compiled-debug": "node_modules/.bin/nodemon --inspect dist/server.js",
-    "debug": "node_modules/.bin/concurrently -k \"yarn watch-ts\" \"yarn compiled-debug\""
+    "debug": "node_modules/.bin/concurrently -k \"yarn watch-ts\" \"yarn compiled-debug\"",
+    "docker-build": "docker build -t myserver .",
+    "docker-debug": "echo TODO"
   }
 }

@@ -1,0 +1,28 @@
+version: "3"
+services:
+    server:
+        build: .
+        container_name: server
+        command: yarn nodemon-watch
+        volumes:
+            - .:/myservice
+        ports:
+            - "5000:5000"
+            - "5858:5858"
+        links:
+            - db
+            - storage
+        depends_on:
+            - db
+            - storage
+    db:
+        image: "microsoft/mssql-server-linux"
+        environment:
+            SA_PASSWORD: "123456"
+            ACCEPT_EULA: "Y"
+    storage:
+        image: "microsoft/azure-storage-emulator"
+        ports:
+            - "10000:10000"
+            - "10001:10001"
+            - "10002:10002"

@@ -21,8 +21,9 @@ services:
             SA_PASSWORD: "123456"
             ACCEPT_EULA: "Y"
     storage:
-        image: "microsoft/azure-storage-emulator"
+        image: "arafato/azurite" # https://github.com/azure/azurite
         ports:
             - "10000:10000"
             - "10001:10001"
-            - "10002:10002"
+        volumes:
+            - .ignored/azurestorage:/opt/azurite/folder

@@ -1,3 +1,6 @@
+# docker local volumes used during development
+.ignored/
+
 # tsc generates into this folder
 dist
 

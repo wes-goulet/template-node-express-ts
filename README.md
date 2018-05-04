@@ -24,5 +24,19 @@ yarn docker-build
 docker build -t myserver .
 ```
 
+## Useful docker commands
+
+### Remove all containers
+
+```
+docker rm $(docker ps -aq)
+```
+
+### Remove all un-tagged images
+
+```
+docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}")
+```
+
 ## References
 - [Microsoft/TypeSript-Node-Starter](https://github.com/Microsoft/TypeScript-Node-Starter)

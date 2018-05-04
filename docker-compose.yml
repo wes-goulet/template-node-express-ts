@@ -16,11 +16,13 @@ services:
             - db
             - storage
     db:
+        container_name: sql-server
         image: "microsoft/mssql-server-linux"
         environment:
-            SA_PASSWORD: "123456"
+            SA_PASSWORD: "Test123456!"
             ACCEPT_EULA: "Y"
     storage:
+        container_name: azure-storage
         image: "arafato/azurite" # https://github.com/azure/azurite
         ports:
             - "10000:10000"

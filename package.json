@@ -21,12 +21,14 @@
     "typescript": "2.8.3"
   },
   "scripts": {
-    "build": "node_modules/.bin/tsc",
-    "start": "node_modules/.bin/tsc && node dist/server.js",
-    "watch-ts": "node_modules/.bin/tsc -w",
-    "compiled-debug": "node_modules/.bin/nodemon --inspect dist/server.js",
-    "debug": "node_modules/.bin/concurrently -k \"yarn watch-ts\" \"yarn compiled-debug\"",
-    "docker-build": "docker build -t myserver .",
-    "docker-debug": "echo TODO"
+    "postinstall": "node_modules/.bin/tsc",
+    "tsc-watch": "node_modules/.bin/tsc -w",
+    "start": "node ./dist/server.js",
+    "docker-build": "docker build -t hotdeployserver .",
+    "docker-up": "docker-compose down && docker-compose up",
+    "docker-debug": "node_modules/.bin/concurrently -k \"yarn tsc-watch\" \"yarn docker-up\"",
+    "debug": "node --inspect=0.0.0.0:5858 --nolazy ./dist/server.js",
+    "nodemon-watch": "node_modules/.bin/nodemon --watch ./dist --inspect=0.0.0.0:5858 --nolazy ./dist/server.js",
+    "debug-watch": "node_modules/.bin/concurrently -k \"yarn tsc-watch\" \"yarn nodemon-watch\""
   }
 }

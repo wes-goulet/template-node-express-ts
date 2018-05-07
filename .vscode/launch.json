@@ -19,12 +19,18 @@
             "internalConsoleOptions": "neverOpen"
         },
         {
-            "type": "node",
-            "request": "attach",
-            "name": "Attach",
-            "port": 9229,
-            "protocol": "inspector",
-            "restart": true
-        }
+      "name": "Attach Docker",
+      "type": "node",
+      "request": "attach",
+      "port": 5858,
+      "restart": true,
+      "timeout": 10000,
+      "protocol": "inspector",
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "/usr/bin/myservice",
+      "outFiles": [
+        "${workspaceFolder}/dist/**/*.js"
+      ]
+    },
     ]
 }

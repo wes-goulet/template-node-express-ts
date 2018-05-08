@@ -1,7 +1,7 @@
 # specify the node base image with your desired version node:<version>
 FROM node:8
 
-WORKDIR /myservice
+WORKDIR /usr/bin/myservice
 
 # copy over all them files and yarn install them
 COPY . .

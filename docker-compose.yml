@@ -5,7 +5,7 @@ services:
         container_name: server
         command: yarn nodemon-watch
         volumes:
-            - .:/myservice
+            - .:/usr/bin/myservice
         ports:
             - "5000:5000"
             - "5858:5858"

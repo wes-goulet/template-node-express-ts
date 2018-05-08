@@ -32,4 +32,4 @@ app.use(
 
 app.listen(PORT);
 // tslint:disable-next-line:no-console
-console.log(`Running a GraphQL API server at localhost:${PORT}/graphql`);
+console.log(`Running a GraphQL API server at localhost:${PORT}/graphql !`);

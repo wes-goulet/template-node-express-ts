@@ -1,4 +1,4 @@
-# template-ts-node
+# template-node-express-ts
 Starter repo for node+express+typescript+vscode debug configs
 
 ## How to run

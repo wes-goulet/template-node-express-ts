@@ -8,7 +8,9 @@
             "type": "node",
             "request": "launch",
             "name": "nodemon",
-            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/nodemon",
+            "cwd": "${workspaceFolder}",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": ["run", "debug"],
             "program": "${workspaceFolder}/src/server.ts",
             "outFiles": [
                 "${workspaceRoot}/dist/*.js"

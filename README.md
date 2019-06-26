@@ -1,15 +1,20 @@
 # template-ts-node
 Starter repo for node+express+typescript+vscode debug configs
 
-## How to build
+## How to run
 
-```
-npm run build
+```sh
+npm start
 ```
 
 ## How to debug
 
-To launch nodemon debug session from vscode use the `nodemon` debug configuration. To manually start a debug nodemon session that can be attached to run `npm run debug`.
+```sh
+npm run debug
+```
+
+Now you can press F5 in VS Code to attach to nodemon, and step through code, hit breakpoints, etc.
 
 ## References
-- [Microsoft/TypeSript-Node-Starter](https://github.com/Microsoft/TypeScript-Node-Starter)
+
+- [Node.js with TypeScript, Debug inside VSCode and Nodemon](https://dev.to/oieduardorabelo/nodejs-with-typescript-debug-inside-vscode-and-nodemon-23o7)

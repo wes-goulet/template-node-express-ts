@@ -6,22 +6,6 @@
     "configurations": [
         {
             "type": "node",
-            "request": "launch",
-            "name": "nodemon",
-            "cwd": "${workspaceFolder}",
-            "runtimeExecutable": "npm",
-            "runtimeArgs": ["run", "debug"],
-            "program": "${workspaceFolder}/src/server.ts",
-            "outFiles": [
-                "${workspaceRoot}/dist/*.js"
-            ],
-            "sourceMaps": true,
-            "restart": true,
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen"
-        },
-        {
-            "type": "node",
             "request": "attach",
             "name": "Attach",
             "port": 9229,

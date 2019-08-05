@@ -7,16 +7,40 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.0",
-    "@types/node": "^12.0.10",
+    "@types/node": "^12.6.9",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "husky": "^3.0.2",
+    "lint-staged": "^9.2.1",
     "nodemon": "^1.19.1",
     "prettier": "^1.18.2",
     "ts-node": "^8.3.0",
-    "typescript": "^3.5.2"
+    "typescript": "^3.5.3"
   },
   "scripts": {
     "prepare": "npm run build",
     "build": "tsc",
     "start": "npm run build && node dist/server.js",
-    "debug": "nodemon --inspect src/server.ts"
+    "debug": "nodemon --inspect src/server.ts",
+    "pretty": "prettier -l \"**/*.{js,ts,json,md,html,css}\"",
+    "pretty:file": "prettier -l",
+    "pretty:fix": "prettier --write \"**/*.{js,ts,json,md,html,css}\"",
+    "eslint": "eslint '**/*.{ts,js}'",
+    "eslint:file": "eslint",
+    "eslint:fix": "eslint --fix '**/*.{ts,js}'",
+    "lint": "npm run pretty && npm run eslint",
+    "lint:fix": "npm run pretty:fix && npm run eslint:fix",
+    "lint:staged": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,ts,json,md,html,css}": "npm run pretty:file -- ",
+    "*.{js,ts}": "npm run eslint:file -- "
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint:staged || { echo \"\n\n****\nYou can run 'npm run lint:fix' from the repo root to attempt to fix lint errors.\n****\n\n\"; false; }"
+    }
   }
 }
